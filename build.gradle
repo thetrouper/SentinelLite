@@ -42,7 +42,6 @@ repositories {
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT"
     implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'org.ow2.asm:asm-commons:9.5'
     implementation files("deps/PDK-1.4.0.jar")
 }
 
