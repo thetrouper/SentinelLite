@@ -19,7 +19,7 @@ public final class SentinelLite extends JavaPlugin {
     private static SentinelLite instance;
     public static LanguageFile lang;
 
-    private static final File dataFolder = new File("plugins/SentinelAntiNuke");
+    private static final File dataFolder = new File("plugins/SentinelLite");
     private static final File violationcfg = new File(SentinelLite.dataFolder(),"/violation-config.json");
     private static final File cfgfile = new File(SentinelLite.dataFolder(),"/main-config.json");
     private static final File nbtcfg = new File(SentinelLite.dataFolder(), "/nbt-config.json");

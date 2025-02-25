@@ -50,7 +50,7 @@ public class FilterHelpers {
     }
 
     public static String convertLeetSpeakCharacters(String text) {
-        text = Text.fromLeetString(text);
+        text = Text.translateLeet(text);
         return text;
     }
 

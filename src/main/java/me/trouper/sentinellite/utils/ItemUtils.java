@@ -120,6 +120,7 @@ public class ItemUtils {
         return false;
     }
 
+    // We dont talk about this one...
     public static boolean isOverLimit(Enchantment enchantment, int level) {
         int maxLevel = SentinelLite.nbtConfig.globalMaxEnchant;
 

@@ -14,7 +14,6 @@ public class HoverFormatter {
 
     private static void formatNode(StringBuilder sb, Node node, int level) {
         if (level == 0) {
-            //sb.append("&#3B3B3B]&#565656=&#717171=&#8C8C8C-&#A7A7A7- &6&l").append(node.title).append("&r &#A7A7A7-&#8C8C8C-&#717171=&#565656=&#3B3B3B[\n");
             sb.append("&8]==-- &6&l").append(node.title).append("&r &8--==[\n&r");
         } else {
             sb.append("&f&l").append(node.title).append("\n");

@@ -14,21 +14,6 @@ public class Text {
         return input.replaceAll("((§|&)[0-9a-fklmnor])|((§|&)#(?:[0-9a-fA-F]{3}){1,2})", "");
     }
 
-    public static String regexHighlighter(String input, String regex, String startString, String endString) {
-        Pattern pattern = Pattern.compile(regex);
-
-        Matcher matcher = pattern.matcher(input);
-
-        StringBuffer result = new StringBuffer();
-
-        while (matcher.find()) {
-            matcher.appendReplacement(result, startString + matcher.group() + endString);
-        }
-        matcher.appendTail(result);
-
-        return result.toString();
-    }
-
     public static final char SECTION_SYMBOL = (char)167;
 
     public static String color(String msg) {
@@ -87,7 +72,7 @@ public class Text {
         return simplifiedText.toString();
     }
 
-    public static String fromLeetString(String s) {
+    public static String translateLeet(String s) {
         Map<String, String> dictionary = SentinelLite.advConfig.leetPatterns;
         String msg = s;
 
