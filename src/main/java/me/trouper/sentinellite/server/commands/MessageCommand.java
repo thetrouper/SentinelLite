@@ -17,7 +17,7 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-@CommandRegistry(value = "sentinelmessage",permission = @Permission("sentinel.message"),printStackTrace = true)
+@CommandRegistry(value = "sentinelmessage",permission = @Permission("sentinellite.message"),printStackTrace = true)
 public class MessageCommand implements CustomCommand {
     @Override
     public void dispatchCommand(CommandSender sender, Command command, String s, Args args) {
@@ -35,7 +35,7 @@ public class MessageCommand implements CustomCommand {
 
         String msg = args.getAll(1).toString().trim();
 
-        if (PlayerUtils.checkPermission(sender,"sentinel.message") && r != null) {
+        if (PlayerUtils.checkPermission(sender,"sentinellite.message") && r != null) {
             Message.messagePlayer(p,r,msg);
         } else if (r == null) p.sendMessage(Text.prefix((SentinelLite.lang.playerInteraction.noOnlinePlayer)));
     }

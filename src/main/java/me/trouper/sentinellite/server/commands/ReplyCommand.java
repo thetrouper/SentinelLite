@@ -16,7 +16,7 @@ import org.bukkit.entity.Player;
 import java.util.Map;
 import java.util.UUID;
 
-@CommandRegistry(value = "reply", permission = @Permission("sentinel.reply"),printStackTrace = true)
+@CommandRegistry(value = "reply", permission = @Permission("sentinellite.reply"),printStackTrace = true)
 public class ReplyCommand implements CustomCommand {
 
     public static Map<UUID, UUID> replyMap = Message.replyMap;
@@ -35,7 +35,7 @@ public class ReplyCommand implements CustomCommand {
             p.sendMessage(Text.prefix(SentinelLite.lang.playerInteraction.noMessageProvided));
         }
         String msg = args.getAll().toString();
-        if (PlayerUtils.checkPermission(sender,"sentinel.message")) {
+        if (PlayerUtils.checkPermission(sender,"sentinellite.message")) {
             Message.messagePlayer(p,r,msg);
             replyMap.put(senderID,reciverID);
         }

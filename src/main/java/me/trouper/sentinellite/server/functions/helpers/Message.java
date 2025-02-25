@@ -4,7 +4,7 @@ import io.github.itzispyder.pdk.utils.ServerUtils;
 import io.papermc.paper.chat.ChatRenderer;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import me.trouper.sentinellite.SentinelLite;
-import me.trouper.sentinellite.server.commands.SentinelCommand;
+import me.trouper.sentinellite.server.commands.SentinelLiteCommand;
 import me.trouper.sentinellite.server.events.ChatEvent;
 import net.kyori.adventure.chat.SignedMessage;
 import net.kyori.adventure.text.Component;
@@ -30,7 +30,7 @@ public class Message {
     public static void sendSpy(Player sender, Player receiver, String message) {
         ServerUtils.forEachPlayer(player -> {
 
-            if (SentinelCommand.spyMap.getOrDefault(player.getUniqueId(),false)) {
+            if (SentinelLiteCommand.spyMap.getOrDefault(player.getUniqueId(),false)) {
                 TextComponent notification = Component
                         .text(SentinelLite.lang.socialSpy.spyMessage.formatted(sender.getName(),receiver.getName()))
                         .hoverEvent(Component.text(SentinelLite.lang.socialSpy.spyMessageHover.formatted(sender.getName(),receiver.getName(),message)));

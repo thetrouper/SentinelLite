@@ -25,7 +25,7 @@ public class MainConfig implements JsonSerializable<MainConfig> {
     public Chat chat = new Chat();
 
     public class Plugin {
-        public String prefix = "§d§lSentinel §8» §7";
+        public String prefix = "§d§lSentinel §7(§eLite§7) §8» §7";
         public String webhook = "https://discord.com/api/webhooks/id/token";
         public String lang = "en-us.json";
         public List<String> trustedPlayers = Arrays.asList(

@@ -11,9 +11,6 @@ import me.trouper.sentinellite.SentinelLite;
 import me.trouper.sentinellite.server.functions.chatfilter.profanity.ProfanityFilter;
 import me.trouper.sentinellite.utils.PlayerUtils;
 import me.trouper.sentinellite.utils.Text;
-import me.trouper.sentinellite.utils.trees.ConsoleFormatter;
-import me.trouper.sentinellite.utils.trees.EmbedFormatter;
-import me.trouper.sentinellite.utils.trees.Node;
 import net.kyori.adventure.chat.SignedMessage;
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
@@ -25,8 +22,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-@CommandRegistry(value = "sentinel",permission = @Permission("sentinel.staff"),printStackTrace = true)
-public class SentinelCommand implements CustomCommand {
+@CommandRegistry(value = "sentinellite",permission = @Permission("sentinellite.staff"),printStackTrace = true)
+public class SentinelLiteCommand implements CustomCommand {
 
     public static Map<UUID, Boolean> spyMap = new HashMap<>();
 
@@ -51,7 +48,7 @@ public class SentinelCommand implements CustomCommand {
 
     private void safety(CommandSender sender, Command command, String label, Args args) {
         if (args.isEmpty()) {
-            sender.sendMessage(Text.prefix("Usage: /sentinel <eload|debug|socialspy>"));
+            sender.sendMessage(Text.prefix("Usage: /sentinellite <reload|debug|socialspy>"));
             return;
         }
 
@@ -60,7 +57,7 @@ public class SentinelCommand implements CustomCommand {
             case "reload" -> handleReload(sender);
             case "debug" -> handleDebugCommand(sender, args);
             case "socialspy" -> handleSocialSpy(sender);
-            default -> sender.sendMessage(Text.prefix("Invalid sub-command. Usage: /sentinel <reload|debug|socialspy>"));
+            default -> sender.sendMessage(Text.prefix("Invalid sub-command. Usage: /sentinellite <reload|debug|socialspy>"));
         }
     }
 

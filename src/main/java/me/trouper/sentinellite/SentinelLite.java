@@ -55,7 +55,7 @@ public final class SentinelLite extends JavaPlugin {
 
         SentinelLite.log.info("Registering Commands");
         // Commands
-        new SentinelCommand().register();
+        new SentinelLiteCommand().register();
         new MessageCommand().register();
         new ReplyCommand().register();
         new ReopCommand().register();
