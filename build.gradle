@@ -1,0 +1,89 @@
+plugins {
+    id 'java'
+}
+
+group = project.group
+version = project.version
+
+jar {
+    from {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.dmulloy2.net/repository/public/"
+    }
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = "papermc"
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        url = uri("https://repo.codemc.io/repository/maven-releases/")
+    }
+    maven {
+        url = uri("https://repo.codemc.io/repository/maven-snapshots/")
+    }
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT"
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.ow2.asm:asm-commons:9.5'
+    implementation files("deps/PDK-1.4.0.jar")
+}
+
+def targetJavaVersion = 21
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release = targetJavaVersion
+    }
+}
+
+tasks.register('copyDeps', Copy) {
+    from configurations.runtimeClasspath
+    into 'build/deps'
+    include '*.jar'
+}
+
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+compileJava.options.encoding("UTF-8")
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+test {
+    useJUnitPlatform()
+}

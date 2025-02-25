@@ -1,0 +1,97 @@
+name: SentinelLite
+version: '${version}'
+main: me.trouper.sentinellite.SentinelLite
+api-version: 1.21
+authors: [ TheTrouper ]
+description: Sentinel without the bare essentials.
+website: https://thetrouper.github.io/
+load: STARTUP
+permissions:
+  sentinel.admin:
+    description: Allows access to all Sentinel admin commands.
+    default: op
+    children:
+      sentinel.reload: true
+      sentinel.config: true
+      sentinel.debug: true
+  sentinel.staff:
+    description: Allows access to Sentinel staff commands.
+    default: op
+    children:
+      sentinel.socialspy: true
+  sentinel.socialspy:
+    description: Allows the user to spy on social interactions.
+    default: false
+  sentinel.reload:
+    description: Allows the user to reload the Sentinel plugin.
+    default: false
+  sentinel.debug:
+    description: Allows the user to toggle debug mode.
+    default: false
+  sentinel.message:
+    description: Allows the user to send messages.
+    default: true
+  sentinel.reply:
+    description: Allows the user to reply to messages.
+    default: true
+  sentinel.chatfilter:
+    description: Parent permission for all chat-related features.
+    default: false
+    children:
+      sentinel.chatfilter.profanity: true
+  sentinel.chatfilter.profanity:
+    description: Parent permission for profanity filter features.
+    default: false
+    children:
+      sentinel.chatfilter.profanity.view: true
+      sentinel.chatfilter.profanity.bypass: true
+  sentinel.chatfilter.profanity.view:
+    description: Allows the user to view profanity filter logs.
+    default: false
+  sentinel.chatfilter.profanity.bypass:
+    description: Allows the user to bypass the profanity filter.
+    default: false
+commands:
+  sentinel:
+    description: Main command for Sentinel.
+    usage: /sentinel <reload|debug>
+    permission: sentinel.staff
+    permission-message: You do not have permission to use this command.
+  message:
+    description: Send a message to another player.
+    usage: /message <player> <message>
+    permission: sentinel.message
+    permission-message: You do not have permission to use this command.
+    aliases:
+      - msg
+      - etell
+      - tell
+      - t
+      - ewhisper
+      - whisper
+      - w
+      - privatemessage
+      - pm
+      - m
+      - directmessage
+      - dm
+      - sentinelmessage
+      - sm
+      - stell
+      - smsg
+  reply:
+    description: Reply to a message.
+    usage: /reply <message>
+    permission: sentinel.reply
+    permission-message: You do not have permission to use this command.
+    aliases:
+      - r
+      - er
+      - rply
+      - ereply
+      - sr
+      - sreply
+      - sentinelreply
+  reop:
+    description: Allows trusted players to elevate their permissions
+    usage: /reop
