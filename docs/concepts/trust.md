@@ -14,4 +14,4 @@ You will need trust to run any administrative features in the plugin, such as th
 3. You can add more people to the list by adding a comma and another string
     - `"trustedPlayers": ["049460f7-21cb-42f5-8059-d42752bf406f", "488016ec-679a-489e-9f42-4eb0276761bb"]`
 
-Be carefull who's UUID you put here. They will bypass **EVERYTHING** in the plugin, are able to modify the configuration, and OP themselves.
+Be careful who's UUID you put here. They will bypass **EVERYTHING** in the plugin, are able to modify the configuration, and OP themselves.

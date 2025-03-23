@@ -1,7 +1,9 @@
 # **Welcome**
+
+## **Thank you for choosing Sentinel**
+
 This documentation will cover everything you need to know about operating both the lite version,
 and the full version of Sentinel.
-## **Thank you for choosing Sentinel**
 
 If you wish to support me, and receive customer support, please [purchase the plugin on BuiltByBit](https://builtbybit.com/resources/sentinel-anti-nuke.30130/).
 
@@ -21,17 +23,16 @@ Sentinel has two versions, a free version, and a paid version.
 | Github Issues      | ✅             | ❌                  |  
 
 ### **Grief Prevention**
-| Feature                 | Sentinel Lite | Sentinel Anti-Nuke |  
-|-------------------------|---------------|--------------------|  
-| Command Block Edit      | ✅             | ✅                  |  
-| Command Block Use       | ✅             | ✅                  |  
-| Command Block Place     | ✅             | ✅                  |  
-| Command Minecart Use    | ✅             | ✅                  |  
-| Command Minecart Place  | ✅             | ✅                  |  
-| NBT Filtering           | ✅             | ✅                  |  
-| Command Protection      | ✅             | ✅                  |  
-| Command Block Whitelist | ❌             | ✅                  |  
-| Backdoor Detection      | ❌             | ✅                  |  
+| Feature                       | Sentinel Lite | Sentinel Anti-Nuke |  
+|-------------------------------|---------------|--------------------|  
+| Command Block Modification    | ✅             | ✅                  |  
+| Structure Block Modification  | ❌             | ✅                  |  
+| Jigsaw Block Modification     | ❌             | ✅                  |  
+| Command Minecart Modification | ✅             | ✅                  |  
+| NBT Filtering                 | ✅             | ✅                  |  
+| Command Protection            | ✅             | ✅                  |  
+| Command Block Whitelist       | ❌             | ✅                  |  
+| Backdoor Detection            | ❌             | ✅                  |  
 
 ### **Chat Filtering**
 | Feature          | Sentinel Lite | Sentinel Anti-Nuke |  

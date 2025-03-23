@@ -4,7 +4,7 @@ The installation for both the lite version and the full version are similar.
 1. Download the plugin from its release page
 2. Upload the plugin to your server in its `./plugins/` folder
 3. Use /reload or reboot your server to load the plugin. **Do not use PlugMan or PluginManager**
-4. When loading for the first time, Sentinel should throw 16 exceptions. This is expected, it is how the config files are created. Sending reports of config generation stack traces will result in you being ignored.
+4. When loading for the first time, Sentinel should throw a lot of exceptions. This is expected, it is how the config files are created. Sending reports of config generation stack traces will result in you being ignored.
 5. **If you are using Sentinel Anti-Nuke** (Full Version)
     - Join the [Support Discord](https://trouper.me/sentinel)
     - Start a ticket under the `✅ Verify Purchase` category. It will ask you for your BuiltByBit Username and Server ID, so prepare those.
